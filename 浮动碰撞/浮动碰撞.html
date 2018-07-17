@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			window.onload = function () {   // window onload 作用：先载入body下的内容
+				var box = document.getElementById("box"); // 获取元素
+				
+				var num = 1;    //设置上增加量
+				var lnum = 0.5; //设置左增量
+				var tp = box.style.top;
+				
+				var lf = box.style.left;
+				//装定时器的变量
+				var timer;
+				box.onclick = function(){//添加点击事件
+					console.log(box.onclick);
+					tp = parseInt(tp);		//把取到的 top 字符串转为数字
+					lf= parseInt(lf);		// 把取到的 left 字符串转为数字
+					
+					timer = setInterval (run,100)		//设定定时器时间
+					
+					box.onmousemove =function () {		
+						clearInterval(timer);
+					}
+					box.onmouseout = function(){
+						timer= setInterval(run,100)
+					}
+				}
+				function run(){ 
+						tp = tp+num;							//改变 tp 数值
+						lf = lf+lnum;						//改变 left 数值
+						
+						box.style.top = tp+'%';				//给行内样式 top 赋值
+						box.style.left = lf+'%';				//给行内样式 left 赋值
+						
+						if (tp >= 90 || tp <= 0) {						//当top值 >=90的时候 
+							num *= -1							//增量改为 -1
+						}
+						if (lf >= 95 || lf<=0) {						//当left值 >=95的时候 
+							lnum *= -0.5						//增量改为-0.5
+						}
+//						if (tp<=0) {							//当值 <=0 的时候 
+//							num=1							//增量改为 1
+//						}
+//						if (lf<=0) {							//当值 <=0 的时候 
+//							lnum=0.5							//增量改为 0.5
+//						}	
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<div id="wrap" style="position: relative; height: 600px; background-color: #563838">
+			<div id="box" style="width: 50px; height: 50px; background: skyblue;  position: absolute; top: 80%;left: 0%;"></div>
+		</div>
+	</body>
+</html>

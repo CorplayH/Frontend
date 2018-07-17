@@ -1,0 +1,152 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    a{
+        text-decoration: none;
+        &:visited{
+            color: #333;
+        }
+    li{
+        list-style: none;
+        }
+    }
+    body{
+        background:#424242;
+    }
+}
+.center{
+    display: block;
+    margin: auto;
+}
+#wrap{
+    width: 1200px;
+    height: 700px;
+    .center;
+    margin-top: 25px;
+    .leftroom{
+        width: 500px;
+        height: 700px;
+        margin-left: 50px;
+        float: left;
+        .chartdisplay{
+            width: 500px;
+            height: 600px;
+            border: 1px solid #3498DB;
+            overflow: scroll;
+            background: #424242;
+            .record{
+                width: 500px;
+                float: left;
+                span{
+                    display: inline-block;
+                    text-align: right;
+                    background: #3d995b;
+                    color: #ffffff;
+                    padding: 10px 10px;
+                    margin: 10px 20px;
+                    font-size: 25px;
+                    border-radius: 10px;
+                    float: right;
+                }
+            }
+            .record2{
+                width: 500px;
+                float: left;
+                span{
+                    display: inline-block;
+                    text-align: left;
+                    background: #ff6680;
+                    color: #ffffff;
+                    padding: 10px 10px;
+                    margin: 10px 10px;
+                    box-sizing: border-box;
+                    font-size: 25px;
+                    border-radius: 10px;
+                    float: left;
+                }
+            }
+        }
+        .chart{
+            width: 450px;
+            height: 100px;
+            border: 1px solid #3498DB;
+            font-size: 20px;
+            resize: none;
+            float: left;
+            background: #C0C0C0;
+        }
+        #buttonl{
+            width: 50px;
+            height: 100px;
+            float: left;
+            background: #C0C0C0;
+            &:focus{
+                outline: none;
+            }
+        }
+    }
+    .rightroom{
+        width: 500px;
+        height: 700px;
+        margin-right: 50px;
+        float: right;
+        .chartdisplay{
+            width: 500px;
+            height: 600px;
+            border: 1px solid #3498DB;
+            overflow: scroll;
+            .record{
+                width: 500px;
+                float: left;
+                span{
+                    display: inline-block;
+                    text-align: left;
+                    background: #3d995b;
+                    color: #ffffff;
+                    padding: 10px 10px;
+                    margin: 10px 10px;
+                    box-sizing: border-box;
+                    font-size: 25px;
+                    border-radius: 10px;
+                    float: left;
+                }
+            }
+            .record2{
+                width: 500px;
+                float: left;
+                span{
+                    display: inline-block;
+                    text-align: right;
+                    background: #ff6680;
+                    color: #ffffff;
+                    padding: 10px 10px;
+                    margin: 10px 20px;
+                    box-sizing: border-box;
+                    font-size: 25px;
+                    border-radius: 10px;
+                    float: right;
+                }
+            }
+            
+        }
+        .chart{
+            width: 450px;
+            height: 100px;
+            border: 1px solid #3498DB;
+            font-size: 20px;
+            resize: none;
+            float: left;
+            background: #C0C0C0;
+        }
+        #buttonr{
+            width: 50px;
+            height: 100px;
+            float: left;
+            background: #C0C0C0;
+            &:focus{
+                outline: none;
+            }
+        }
+    }
+}

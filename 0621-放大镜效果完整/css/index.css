@@ -1,0 +1,73 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+#displaysmall {
+  width: 300px;
+  height: 200px;
+  position: relative;
+  outline: 2px solid #FF6700;
+  margin: 10px 50px;
+}
+#displaysmall .smallpic {
+  width: 300px;
+  height: 200px;
+  position: absolute;
+  display: none;
+}
+#displaysmall #clickbox {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background: rgba(192, 192, 192, 0.3);
+}
+#displaysmall #cover {
+  width: 300px;
+  height: 200px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 99;
+}
+#smb{
+	height: 60px;
+	width: 380px;
+	position: relative;
+	top: 10px;
+	left: 10px;
+	
+}
+#smb .smbpic{
+	height: 60px;
+	width: 90px;	
+	padding-left: 5px;
+}
+#displaybig {
+  width: 500px;
+  height: 500px;
+  position: absolute;
+  outline: 2px solid #FF6700;
+  top: 10px;
+  left: 450px;
+  overflow: auto;
+}
+#displaybig .active{
+	width: 1500px;
+  	height: 1000px;
+  	position: absolute;
+  	top: 0px;
+  	left: 0px;
+	display: block;
+}
+#displaybig img {
+  width: 1500px;
+  height: 1000px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  display: none;
+}
+

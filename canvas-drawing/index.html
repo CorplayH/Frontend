@@ -1,0 +1,134 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>先天八卦</title>
+</head>
+ 
+<body>
+<canvas id="myCanvas" width="800" height="800">
+</canvas>
+ 
+<script type="text/javascript">
+(function () {
+    var canvas = document.getElementById("myCanvas");
+    var context = canvas.getContext("2d");
+    var rotate45d = function () {
+        context.translate(400, 400);
+        context.rotate(Math.PI / 4);
+        context.translate(-400, -400);
+    }
+     
+    var drawGua = function (first, second, third) {
+        var widthCanvas = canvas.width, heightCanvas = canvas.height;
+        var widthGua = 100, heightGua = 10, marginX = 10, marginY = 15;
+        var firstX = (widthCanvas - widthGua) / 2,
+            secondX = (widthCanvas + marginX) / 2;
+        var firstY = heightCanvas / 40,
+            secondY = firstY + heightGua + marginY,
+            thirdY = secondY + heightGua + marginY,
+            fourthY = thirdY + heightGua + marginY;
+ 
+        context.fillStyle = "black";
+        if (first) {
+            context.fillRect(firstX, firstY, widthGua, heightGua);
+        } else {
+            context.fillRect(firstX, firstY, (widthGua - marginX) / 2, heightGua);
+            context.fillRect(secondX, firstY, (widthGua - marginX) / 2, heightGua);
+        }
+         
+        if (second) {
+            context.fillRect(firstX, secondY, widthGua, heightGua);
+        } else {
+            context.fillRect(firstX, secondY, (widthGua - marginX) / 2, heightGua);
+            context.fillRect(secondX, secondY, (widthGua - marginX) / 2, heightGua);
+        }
+         
+        if (third) {
+            context.fillRect(firstX, thirdY, widthGua, heightGua);
+        } else {
+            context.fillRect(firstX, thirdY, (widthGua - marginX) / 2, heightGua);
+            context.fillRect(secondX, thirdY, (widthGua - marginX) / 2, heightGua);
+        }
+//      context.fillStyle = "red";
+//      context.fillText(text, firstX + 20, fourthY + 12);
+//      context.fillStyle = "blue";
+//      context.fillText(text2, firstX + 20, fourthY + 36);
+    }
+       
+//		//绘制圆形
+//		// arc(x, y, radius, startAngle, endAngle, anticlockwise)
+//		//x坐标,y坐标,半径,起始位置,结束位置,方向,(顺时针false，逆时针true)
+//		var canvas = document.getElementById("canvas");
+//		var context = canvas.getContext("2d"); 
+		//外轮廓   左半圆白
+		context.beginPath();
+		context.arc(400, 400, 300, Math.PI*0.5, Math.PI*1.5);
+		context.fillStyle = "#FFF";
+		context.fill();
+		//外轮廓   左半圆黑
+		context.beginPath();
+		context.arc(400, 400, 300, Math.PI*1.5, Math.PI*0.5);
+		context.fillStyle = "#000";
+		context.fill();		
+
+		//上半圆   黑
+		context.beginPath();
+		context.arc(400, 250, 150, Math.PI*0.5, Math.PI*1.5);
+		context.fillStyle = "#000";
+		context.fill();	
+
+		//下半圆   白
+		context.beginPath();
+		context.arc(400, 550, 150, Math.PI*1.5, Math.PI*0.5);
+		context.fillStyle = "#FFF";
+		context.fill();	
+
+		//上实心圆   白 
+		context.beginPath();
+		context.arc(400, 250, 50, 0, Math.PI*2);
+		context.fillStyle = "#FFF";
+		context.fill();	
+
+		//下实心圆   黑
+		context.beginPath();
+		context.arc(400, 550, 50, 0, Math.PI*2);
+		context.fillStyle = "#000";	//填充样式
+		context.fill();				//绘制填充
+
+		//优化 整体边框 黑
+		context.beginPath();
+		context.arc(400, 400, 300, 0, Math.PI*2);
+		context.strokeStyle="#000";	//边框样式
+		context.lineWidth = 2;  //设置线条粗细为2px
+		context.stroke();		//边框绘制
+	
+     
+    drawGua(true, true, true);
+ 
+    rotate45d();
+    drawGua(true, true, false);
+     
+    rotate45d();
+    drawGua(false, true, false);
+     
+    rotate45d();
+    drawGua(true, false, false);
+     
+    rotate45d();
+    drawGua(false, false, false);
+     
+    rotate45d();
+    drawGua(false, false, true);
+     
+    rotate45d();
+    drawGua(true, false, true);
+     
+    rotate45d();
+    drawGua(false, true, true);
+    
+ 
+})();
+</script>
+</body>
+</html>
